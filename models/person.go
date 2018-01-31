@@ -15,7 +15,8 @@ type Person struct {
 	CreatedAt time.Time `json:"created_at" db:"created_at"`
 	UpdatedAt time.Time `json:"updated_at" db:"updated_at"`
 	Name      string    `json:"name" db:"name"`
-	Pets      Pets      `many_to_many:"pet_owners" db:"-"`
+	PetOwners PetOwners `has_many:"pet_owners" order_by:"created_at asc"`
+	Pets      Pets      `many_to_many:"pet_owners"`
 }
 
 // String is not required by pop and may be deleted

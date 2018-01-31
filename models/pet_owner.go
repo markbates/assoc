@@ -15,8 +15,8 @@ type PetOwner struct {
 	UpdatedAt time.Time `json:"updated_at" db:"updated_at"`
 	PersonID  uuid.UUID `json:"person_id" db:"person_id"`
 	PetID     uuid.UUID `json:"pet_id" db:"pet_id"`
-	Pet       Pet       `belongs_to:"pets" db:"-"`
-	Person    Person    `belongs_to:"people" db:"-"`
+	Pet       Pet       `belongs_to:"pets"`
+	Person    Person    `belongs_to:"people"`
 }
 
 // String is not required by pop and may be deleted

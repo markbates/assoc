@@ -1,9 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"log"
 
-	"github.com/kr/pretty"
 	"github.com/markbates/assoc/models"
 	"github.com/markbates/pop"
 	"github.com/pkg/errors"
@@ -30,16 +30,12 @@ func main() {
 	if err := loadPerson(); err != nil {
 		log.Fatal(err)
 	}
-}
-
-func loadPerson() error {
-	p := &models.Person{}
-	if err := DB.Eager().First(p); err != nil {
-		return errors.WithStack(err)
+	if err := loadPet(); err != nil {
+		log.Fatal(err)
 	}
-	pretty.Println("### p ->", p)
-	pretty.Println("### p.Pets ->", p.Pets)
-	return nil
+	if err := loadPetOwner(); err != nil {
+		log.Fatal(err)
+	}
 }
 
 func populateDB() error {
@@ -76,4 +72,39 @@ func populateDB() error {
 		}
 		return nil
 	})
+}
+
+func loadPerson() error {
+	fmt.Println("\n\n### --- LOAD PERSON --- ###\n\n")
+	p := &models.Person{}
+	if err := DB.Eager().First(p); err != nil {
+		return errors.WithStack(err)
+	}
+	fmt.Println("### p ->", p)
+	fmt.Println("### p.Pets ->", p.Pets)
+	fmt.Println("### p.PetOwners ->", p.PetOwners)
+	return nil
+}
+
+func loadPet() error {
+	fmt.Println("\n\n### --- LOAD PET --- ###\n\n")
+	p := &models.Pet{}
+	if err := DB.Eager().First(p); err != nil {
+		return errors.WithStack(err)
+	}
+	fmt.Println("### p ->", p)
+	fmt.Println("### p.Owners ->", p.Owners)
+	return nil
+}
+
+func loadPetOwner() error {
+	fmt.Println("\n\n### --- LOAD PET OWNER --- ###\n\n")
+	po := &models.PetOwner{}
+	if err := DB.Eager().First(po); err != nil {
+		return errors.WithStack(err)
+	}
+	fmt.Println("### po ->", po)
+	fmt.Println("### po.Pet ->", po.Pet)
+	fmt.Println("### po.Person ->", po.Person)
+	return nil
 }

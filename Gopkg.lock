@@ -54,18 +54,6 @@
 
 [[projects]]
   branch = "master"
-  name = "github.com/kr/pretty"
-  packages = ["."]
-  revision = "cfb55aafdaf3ec08f0db22699ab822c50091b1c4"
-
-[[projects]]
-  branch = "master"
-  name = "github.com/kr/text"
-  packages = ["."]
-  revision = "7cafcd837844e784b526369c9bce262804aebc60"
-
-[[projects]]
-  branch = "master"
   name = "github.com/lib/pq"
   packages = [
     ".",
@@ -214,6 +202,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "c341a06c55b91c736b5e2551c9c38e9b08420d68d4253d1161673bb69fdb71de"
+  inputs-digest = "759d90995eb3886ea130c3dd227983e1e9358afd21bc7382a53d2c23c0fab475"
   solver-name = "gps-cdcl"
   solver-version = 1
