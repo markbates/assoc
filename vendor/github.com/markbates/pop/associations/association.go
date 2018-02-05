@@ -10,7 +10,6 @@ import (
 // field. It can represent a association of the type has_many
 // belongs_to or has_one, and other customized types.
 type Association interface {
-	TableName() string
 	Kind() reflect.Kind
 	Interface() interface{}
 	Constraint() (string, []interface{})
@@ -38,8 +37,3 @@ type associationParams struct {
 // associationBuilder is a type representing an association builder implementation.
 // see the builder defined in ./has_many_association.go as a guide of how to use it.
 type associationBuilder func(associationParams) (Association, error)
-
-// tableNameable represents a model with a customized table name.
-type tableNameable interface {
-	TableName() string
-}

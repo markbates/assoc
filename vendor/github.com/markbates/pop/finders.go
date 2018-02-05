@@ -153,6 +153,17 @@ func (q *Query) All(models interface{}) error {
 	return nil
 }
 
+// Load loads all association or the fields specified in params for
+// an already loaded model.
+//
+// tx.First(&u)
+// tx.Load(&u)
+func (c *Connection) Load(model interface{}, fields ...string) error {
+	q := Q(c)
+	q.eagerFields = fields
+	return q.eagerAssociations(model)
+}
+
 func (q *Query) eagerAssociations(model interface{}) error {
 	var err error
 	assos, err := associations.AssociationsForStruct(model, q.eagerFields...)
@@ -178,7 +189,7 @@ func (q *Query) eagerAssociations(model interface{}) error {
 			}
 		}
 
-		sqlSentence, args := query.ToSQL(&Model{Value: association.TableName()})
+		sqlSentence, args := query.ToSQL(&Model{Value: association.Interface()})
 		query = query.RawQuery(sqlSentence, args...)
 
 		if association.Kind() == reflect.Slice || association.Kind() == reflect.Array {

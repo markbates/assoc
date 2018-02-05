@@ -46,6 +46,3 @@
   branch = "master"
   name = "github.com/satori/go.uuid"
 
-[prune]
-  go-tests = true
-  unused-packages = true

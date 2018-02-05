@@ -27,15 +27,18 @@ func main() {
 	if err := populateDB(); err != nil {
 		log.Fatal(err)
 	}
-	if err := loadPerson(); err != nil {
+	// if err := loadPerson(); err != nil {
+	// 	log.Fatal(err)
+	// }
+	if err := loadPersonAssoc(); err != nil {
 		log.Fatal(err)
 	}
-	if err := loadPet(); err != nil {
-		log.Fatal(err)
-	}
-	if err := loadPetOwner(); err != nil {
-		log.Fatal(err)
-	}
+	// if err := loadPet(); err != nil {
+	// 	log.Fatal(err)
+	// }
+	// if err := loadPetOwner(); err != nil {
+	// 	log.Fatal(err)
+	// }
 }
 
 func populateDB() error {
@@ -82,6 +85,27 @@ func loadPerson() error {
 	}
 	fmt.Println("### p ->", p)
 	fmt.Println("### p.Pets ->", p.Pets)
+	fmt.Println("### p.PetOwners ->", p.PetOwners)
+	return nil
+}
+
+func loadPersonAssoc() error {
+	fmt.Println("\n\n### --- LOAD PERSON --- ###\n\n")
+	p := &models.Person{}
+	if err := DB.First(p); err != nil {
+		return errors.WithStack(err)
+	}
+	fmt.Println("### p ->", p)
+	fmt.Println("### p.Pets ->", p.Pets)
+	fmt.Println("### p.PetOwners ->", p.PetOwners)
+	if err := DB.Load(p); err != nil {
+		return errors.WithStack(err)
+	}
+	fmt.Println("### p.Pets ->", p.Pets)
+	fmt.Println("### p.PetOwners ->", p.PetOwners)
+	if err := DB.Load(&p.PetOwners); err != nil {
+		return errors.WithStack(err)
+	}
 	fmt.Println("### p.PetOwners ->", p.PetOwners)
 	return nil
 }
