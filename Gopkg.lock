@@ -8,12 +8,6 @@
   revision = "59c0560478b705bf9bd12f9252224a0fad7c87df"
 
 [[projects]]
-  name = "github.com/daviddengcn/go-colortext"
-  packages = ["."]
-  revision = "17e75f6184bc9e727756cd0d82e0af58b1fc7191"
-  version = "1.0.0"
-
-[[projects]]
   name = "github.com/fatih/color"
   packages = ["."]
   revision = "507f6050b8568533fb3f5504de8e5205fa62a114"
@@ -38,10 +32,17 @@
   version = "v1.10.7"
 
 [[projects]]
-  branch = "master"
+  branch = "eager-executors"
   name = "github.com/gobuffalo/pop"
-  packages = ["."]
-  revision = "0bd638e12b8bbfd2b6453e686dbb628dfc277b75"
+  packages = [
+    ".",
+    "associations",
+    "columns",
+    "fizz",
+    "fizz/translators",
+    "nulls"
+  ]
+  revision = "6b961646fba3786e4f3a4476557fcdbff332d660"
   source = "github.com/larrymjordan/pop"
 
 [[projects]]
@@ -100,55 +101,15 @@
   revision = "b5c853d089b86134926274bc7a98496fee5e1d6b"
 
 [[projects]]
-  name = "github.com/markbates/pop"
-  packages = [
-    "associations",
-    "columns",
-    "fizz",
-    "fizz/translators"
-  ]
-  revision = "f230643ae0f8fa01e9444c2fb857ba1f1a78eb1f"
-  version = "v4.0.0"
-
-[[projects]]
-  name = "github.com/markbates/validate"
-  packages = ["."]
-  revision = "cd8cc34c703420d6b084fbbfd5085e8e71c5b830"
-  version = "v1.0.0"
-
-[[projects]]
-  branch = "struct"
   name = "github.com/mattn/anko"
   packages = [
     "ast",
-    "builtins",
-    "builtins/encoding/json",
-    "builtins/errors",
-    "builtins/flag",
-    "builtins/fmt",
-    "builtins/github.com/daviddengcn/go-colortext",
-    "builtins/io",
-    "builtins/io/ioutil",
-    "builtins/math",
-    "builtins/math/big",
-    "builtins/math/rand",
-    "builtins/net",
-    "builtins/net/http",
-    "builtins/net/url",
-    "builtins/os",
-    "builtins/os/exec",
-    "builtins/os/signal",
-    "builtins/path",
-    "builtins/path/filepath",
-    "builtins/regexp",
-    "builtins/runtime",
-    "builtins/sort",
-    "builtins/strings",
-    "builtins/time",
+    "core",
     "parser",
     "vm"
   ]
-  revision = "158d91ccdd07c67e99204497290ec9e687b7a0cd"
+  revision = "f4b54922efdd844c58a93f8faca1fe0c62ca44c3"
+  version = "v0.0.2"
 
 [[projects]]
   name = "github.com/mattn/go-colorable"
@@ -173,11 +134,6 @@
   packages = ["."]
   revision = "645ef00459ed84a119197bfb8d8205042c6df63d"
   version = "v0.8.0"
-
-[[projects]]
-  name = "github.com/satori/go.uuid"
-  packages = ["."]
-  revision = "36e9d2ebbde5e3f13ab2e25625fd453271d6522e"
 
 [[projects]]
   branch = "master"
@@ -212,6 +168,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "9dee656e7c66a8d34dcf7c2a958ee4e27267b91d5de1452b86961bb5e4a250b5"
+  inputs-digest = "191c1df9a9d9672db2767d3452eab4ad3f4248790041b86ff105c97b8c19444b"
   solver-name = "gps-cdcl"
   solver-version = 1

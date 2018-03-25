@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/markbates/assoc/models"
 	"github.com/gobuffalo/pop"
+	"github.com/markbates/assoc/models"
 	"github.com/pkg/errors"
 )
 
@@ -44,17 +44,17 @@ func main() {
 func populateDB() error {
 	return DB.Transaction(func(tx *pop.Connection) error {
 		mark := &models.Person{Name: "Mark"}
-		if err := tx.Create(mark); err != nil {
+		if err := tx.Eager().Create(mark); err != nil {
 			return errors.WithStack(err)
 		}
 
 		rachel := &models.Person{Name: "Rachel"}
-		if err := tx.Create(rachel); err != nil {
+		if err := tx.Eager().Create(rachel); err != nil {
 			return errors.WithStack(err)
 		}
 
 		pet := &models.Pet{Name: "Ringo"}
-		if err := tx.Create(pet); err != nil {
+		if err := tx.Eager().Create(pet); err != nil {
 			return errors.WithStack(err)
 		}
 
@@ -62,6 +62,7 @@ func populateDB() error {
 			PersonID: mark.ID,
 			PetID:    pet.ID,
 		}
+		// using tx.Eager().Create(po) returns an error
 		if err := tx.Create(po); err != nil {
 			return errors.WithStack(err)
 		}
@@ -101,10 +102,19 @@ func loadPersonAssoc() error {
 	if err := DB.Load(p); err != nil {
 		return errors.WithStack(err)
 	}
+	if p.Pets == nil {
+		return errors.New("p.Pets should not be nil")
+	}
 	fmt.Println("### p.Pets ->", p.Pets)
+	if p.PetOwners == nil {
+		return errors.New("p.Pets should not be nil")
+	}
 	fmt.Println("### p.PetOwners ->", p.PetOwners)
 	if err := DB.Load(&p.PetOwners); err != nil {
 		return errors.WithStack(err)
+	}
+	if p.PetOwners == nil {
+		return errors.New("p.Pets should not be nil")
 	}
 	fmt.Println("### p.PetOwners ->", p.PetOwners)
 	return nil
