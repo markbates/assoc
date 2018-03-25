@@ -5,7 +5,7 @@ import (
 	"log"
 
 	"github.com/markbates/assoc/models"
-	"github.com/markbates/pop"
+	"github.com/gobuffalo/pop"
 	"github.com/pkg/errors"
 )
 
