@@ -1,0 +1,4 @@
+create_table("course_codes", func(t) {
+	t.Column("id", "uuid", {"primary": true})
+	t.Column("course_id", "uuid", {})
+})

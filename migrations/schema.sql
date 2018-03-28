@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 9.6.1
--- Dumped by pg_dump version 9.6.1
+-- Dumped from database version 9.6.5
+-- Dumped by pg_dump version 9.6.5
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -33,6 +33,33 @@ SET search_path = public, pg_catalog;
 SET default_tablespace = '';
 
 SET default_with_oids = false;
+
+--
+-- Name: course_codes; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE course_codes (
+    id uuid NOT NULL,
+    course_id uuid NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE course_codes OWNER TO postgres;
+
+--
+-- Name: courses; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE courses (
+    id uuid NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE courses OWNER TO postgres;
 
 --
 -- Name: people; Type: TABLE; Schema: public; Owner: postgres
@@ -87,6 +114,22 @@ CREATE TABLE schema_migration (
 
 
 ALTER TABLE schema_migration OWNER TO postgres;
+
+--
+-- Name: course_codes course_codes_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY course_codes
+    ADD CONSTRAINT course_codes_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: courses courses_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY courses
+    ADD CONSTRAINT courses_pkey PRIMARY KEY (id);
+
 
 --
 -- Name: people people_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres

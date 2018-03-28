@@ -5,6 +5,7 @@ import (
 	"log"
 
 	"github.com/gobuffalo/pop"
+	"github.com/gobuffalo/uuid"
 	"github.com/markbates/assoc/models"
 	"github.com/pkg/errors"
 )
@@ -43,6 +44,16 @@ func main() {
 
 func populateDB() error {
 	return DB.Transaction(func(tx *pop.Connection) error {
+		code := &models.CourseCode{
+			Course: models.Course{},
+		}
+		if err := tx.Eager().Create(code); err != nil {
+			return errors.WithStack(err)
+		}
+		if code.ID == uuid.Nil {
+			return errors.New("code/course was never saved and an error was never thrown")
+		}
+
 		mark := &models.Person{Name: "Mark"}
 		if err := tx.Eager().Create(mark); err != nil {
 			return errors.WithStack(err)
