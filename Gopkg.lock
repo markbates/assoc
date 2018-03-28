@@ -42,7 +42,7 @@
     "fizz/translators",
     "nulls"
   ]
-  revision = "6b961646fba3786e4f3a4476557fcdbff332d660"
+  revision = "3a8f02c7c7ae862bd82914dc89b4567cc4dcfdda"
   source = "github.com/larrymjordan/pop"
 
 [[projects]]
@@ -82,7 +82,7 @@
     ".",
     "oid"
   ]
-  revision = "b2004221932bd6b13167ef654c81cffac36f7537"
+  revision = "d34b9ff171c21ad295489235aec8b6626023cd04"
 
 [[projects]]
   branch = "master"
@@ -157,7 +157,7 @@
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix"]
-  revision = "91ee8cde435411ca3f1cd365e8f20131aed4d0a1"
+  revision = "13d03a9a82fba647c21a0ef8fba44a795d0f0835"
 
 [[projects]]
   name = "gopkg.in/yaml.v2"

@@ -63,7 +63,7 @@ func populateDB() error {
 			PetID:    pet.ID,
 		}
 		// using tx.Eager().Create(po) returns an error
-		if err := tx.Create(po); err != nil {
+		if err := tx.Eager().Create(po); err != nil {
 			return errors.WithStack(err)
 		}
 
