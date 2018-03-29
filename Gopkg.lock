@@ -42,7 +42,7 @@
     "fizz/translators",
     "nulls"
   ]
-  revision = "3a8f02c7c7ae862bd82914dc89b4567cc4dcfdda"
+  revision = "c788bf8919488bfa075ed933b2e68dde73ca9158"
   source = "github.com/larrymjordan/pop"
 
 [[projects]]
@@ -157,13 +157,13 @@
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix"]
-  revision = "13d03a9a82fba647c21a0ef8fba44a795d0f0835"
+  revision = "378d26f46672a356c46195c28f61bdb4c0a781dd"
 
 [[projects]]
   name = "gopkg.in/yaml.v2"
   packages = ["."]
-  revision = "7f97868eec74b32b0982dd158a51a446d1da7eb5"
-  version = "v2.1.1"
+  revision = "5420a8b6744d3b0345ab293f6fcba19c978f1183"
+  version = "v2.2.1"
 
 [solve-meta]
   analyzer-name = "dep"
