@@ -8,6 +8,12 @@
   revision = "59c0560478b705bf9bd12f9252224a0fad7c87df"
 
 [[projects]]
+  name = "github.com/davecgh/go-spew"
+  packages = ["spew"]
+  revision = "346938d642f2ec3594ed81d874461961cd0faa76"
+  version = "v1.1.0"
+
+[[projects]]
   name = "github.com/fatih/color"
   packages = ["."]
   revision = "507f6050b8568533fb3f5504de8e5205fa62a114"
@@ -42,7 +48,7 @@
     "fizz/translators",
     "nulls"
   ]
-  revision = "c788bf8919488bfa075ed933b2e68dde73ca9158"
+  revision = "cd5b0172b5ef42154d6b677b4ceedfd63067ef37"
   source = "github.com/larrymjordan/pop"
 
 [[projects]]
@@ -98,7 +104,7 @@
   branch = "master"
   name = "github.com/markbates/inflect"
   packages = ["."]
-  revision = "b5c853d089b86134926274bc7a98496fee5e1d6b"
+  revision = "adc799c2d667cde52c4d87c04a3dda4940f6fe05"
 
 [[projects]]
   name = "github.com/mattn/anko"
@@ -136,16 +142,31 @@
   version = "v0.8.0"
 
 [[projects]]
+  name = "github.com/pmezard/go-difflib"
+  packages = ["difflib"]
+  revision = "792786c7400a136282c1664665ae0a8db921c6c2"
+  version = "v1.0.0"
+
+[[projects]]
   branch = "master"
   name = "github.com/serenize/snaker"
   packages = ["."]
   revision = "a683aaf2d516deecd70cad0c72e3ca773ecfcef0"
 
 [[projects]]
+  name = "github.com/stretchr/testify"
+  packages = [
+    "assert",
+    "require"
+  ]
+  revision = "12b6f73e6084dad08a7c6e575284b177ecafbc71"
+  version = "v1.2.1"
+
+[[projects]]
   branch = "master"
   name = "golang.org/x/net"
   packages = ["context"]
-  revision = "6078986fec03a1dcc236c34816c71b0e05018fda"
+  revision = "b68f30494add4df6bd8ef5e82803f308e7f7c59c"
 
 [[projects]]
   branch = "master"
@@ -168,6 +189,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "191c1df9a9d9672db2767d3452eab4ad3f4248790041b86ff105c97b8c19444b"
+  inputs-digest = "6b3fd61928e58c0a24ff9d3a735582a5cdb08a4b1badb97f9adbfd6ed606f96f"
   solver-name = "gps-cdcl"
   solver-version = 1

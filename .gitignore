@@ -23,7 +23,8 @@ jhw.*
 node_modules/
 dist/
 generated/
-.vendor/
+vendor/
 bin/*
 gin-bin
 assoc
+tsoda
