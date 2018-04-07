@@ -48,7 +48,7 @@
     "fizz/translators",
     "nulls"
   ]
-  revision = "cd5b0172b5ef42154d6b677b4ceedfd63067ef37"
+  revision = "e4e84d85a6e5dec48c350b4bc203ba09b285019d"
   source = "github.com/larrymjordan/pop"
 
 [[projects]]
@@ -73,7 +73,7 @@
     ".",
     "reflectx"
   ]
-  revision = "cf35089a197953c69420c8d0cecda90809764b1d"
+  revision = "2aeb6a910c2b94f2d5eb53d9895d80e27264ec41"
 
 [[projects]]
   name = "github.com/joho/godotenv"
@@ -104,7 +104,7 @@
   branch = "master"
   name = "github.com/markbates/inflect"
   packages = ["."]
-  revision = "adc799c2d667cde52c4d87c04a3dda4940f6fe05"
+  revision = "fbc6b23ce49e2578f572d2e72bb72fa03c7145de"
 
 [[projects]]
   name = "github.com/mattn/anko"
@@ -114,8 +114,8 @@
     "parser",
     "vm"
   ]
-  revision = "f4b54922efdd844c58a93f8faca1fe0c62ca44c3"
-  version = "v0.0.2"
+  revision = "4e3cdcf522140b26466698841bfdc3227c898043"
+  version = "v0.0.3"
 
 [[projects]]
   name = "github.com/mattn/go-colorable"
@@ -166,7 +166,7 @@
   branch = "master"
   name = "golang.org/x/net"
   packages = ["context"]
-  revision = "b68f30494add4df6bd8ef5e82803f308e7f7c59c"
+  revision = "61147c48b25b599e5b561d2e9c4f3e1ef489ca41"
 
 [[projects]]
   branch = "master"
@@ -178,7 +178,7 @@
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix"]
-  revision = "378d26f46672a356c46195c28f61bdb4c0a781dd"
+  revision = "3b87a42e500a6dc65dae1a55d0b641295971163e"
 
 [[projects]]
   name = "gopkg.in/yaml.v2"
